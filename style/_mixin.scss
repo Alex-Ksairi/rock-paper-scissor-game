@@ -1,0 +1,32 @@
+// coding and mixin starting right below
+
+@mixin bgImg {
+    background-image: url(../images/wall.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin measurement ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position ($position, $top, $right, $bottom, $left) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}

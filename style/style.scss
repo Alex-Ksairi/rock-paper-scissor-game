@@ -1,0 +1,228 @@
+/* all imported files */
+@import "./reset";
+@import "./variables";
+@import "./mixin";
+
+
+/* styling starts right below  */
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $fonts !important;
+    @include bgImg;
+}
+
+.date {
+    @include measurement (200px, 50px);
+    
+    line-height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 4px 5px 5px $border-color;
+    background-color: $border-color;
+    color: $bgColor;
+    
+    @include position (absolute, 25px, '', '', 20px);
+
+    @include tablet {
+        @include measurement (150px, 40px);
+
+        line-height: 40px;
+        font-size: 1.5rem;
+    }
+
+    @include mobile {
+        @include measurement (100px, 20px);
+
+        line-height: 20px;
+        font-size: 1rem;
+    }
+}
+
+
+.clock {
+    @include measurement (150px, 50px);
+    
+    line-height: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 4px 5px 5px $border-color;
+    background-color: $border-color;
+    color: $bgColor;
+    
+    @include position (absolute, 25px, 20px, '', '');
+
+    @include tablet {
+        @include measurement (100px, 30px);
+
+        line-height: 30px;
+        font-size: 1.3rem;
+
+        @include position (absolute, 25px, 20px, '', '');
+    }
+
+    @include mobile {
+        @include measurement (75px, 20px);
+
+        line-height: 20px;
+        font-size: 1rem;
+
+        @include position (absolute, 25px, 20px, '', '');
+    }
+}
+
+header {
+    padding: 50px 0 20px 0;
+
+    h1 {
+        color: $hColor;
+        letter-spacing: 5px;
+        text: {
+            transform: capitalize;
+            align: center;
+        }
+
+        font: {
+            size: 3.5em;
+            weight: 100;
+        }
+
+        @include tablet {
+            letter-spacing: 2.5px;
+            font-size: 2.5em;
+        }
+
+        @include mobile {
+            letter-spacing: 1.2px;
+            font-size: 2em;
+        }
+
+    }
+}
+
+.score-board {
+    width: 250px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    font-size: 3rem;
+    text-align: center;
+    border: solid 3px $border-color;
+    border-radius: 4px;
+    color: $color;
+
+    position: relative;
+
+    .badge {
+        background-color: $bgColor;
+        color: whitesmoke;
+        font-size: 1.3rem;
+        padding: 2px 10px;
+    }
+
+    #user-label {
+        @include position (absolute, 40px, '', '', -35px);
+    }
+
+    #computer-label {
+        @include position (absolute, 40px, -60px, '', '');
+    }
+
+}
+
+.result {
+    font-size: 2.5em;
+    color: $color;
+
+    p {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    @include tablet {
+        font-size: 2em;
+    }
+
+
+    @include mobile {
+        font-size: 1.7em;
+    }
+}
+
+.choices {
+    margin: 50px 20px;
+    text-align: center;
+    font-size: 80px;
+    
+    .choice {
+        margin: 0 10px;
+        padding: 10px 30px 10px 30px;
+        color: $bgColor;
+        border: solid 2px $border-color;
+        border-radius: 50%;
+        
+        display: inline-block;
+
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $bgColor;
+            color: $border-color;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    @include tablet {
+        margin: 40px 15px;
+        font-size: 60px;
+    }
+
+
+    @include mobile {
+        margin: 25px 8px;
+        font-size: 30px;
+        padding: 5px 15px 5px 15px;
+    }
+}
+
+#action-message {
+    text-align: center;
+    color: $color;
+
+    font: {
+        size: 30px;
+        weight: 400;
+    }
+
+    @include mobile {
+        font-size: 25px;
+    }
+}
+
+// adding classes to icons depending on winner or loser
+.green-glow {
+    border: 4px solid #4dcc7d;
+    box-shadow: 0 0 10px #31b43a;
+}
+
+.red-glow {
+    border: 4px solid #fc121b;
+    box-shadow: 0 0 10px #d01115;
+}
+
+.gray-glow {
+    border: 4px solid #464647;
+    box-shadow: 0 0 10px #25292b;
+}
+
+
+
+
+
+
+
